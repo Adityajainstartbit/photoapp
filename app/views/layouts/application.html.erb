@@ -7,9 +7,9 @@
     <title><%= content_for?(:title) ? yield(:title) : "PhotoApp" %></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <%= csrf_meta_tags %>
-
+ 
     <%= stylesheet_link_tag "application", :media => "all" %>
-
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <!-- For third-generation iPad with high-resolution Retina display: -->
     <!-- Size should be 144 x 144 pixels -->
@@ -57,9 +57,7 @@ edit_user_registration_path, title: 'Edit Profile' %>
 
 <li class="col-md-1"> </li>
 
-<li class="col-md-3 logout"><%= link_to('Logout', destroy_user_session_path,
-
-class: 'btn btn-xs btn-danger', title: 'Logout', :method => :delete) %></li>
+<li class="col-md-3 logout"><%= link_to "log out", destroy_user_session_path, data: { method: :delete }, class: 'btn btn-primary'  %></li>
 
 <% else %>
 
@@ -82,7 +80,7 @@ class: 'btn btn-xs btn-danger', title: 'Logout', :method => :delete) %></li>
     <div class="container">
       <div class="row">
 
-        <div class="col-lg-9">
+        <div class="col-lg-12">
           <%= bootstrap_flash %>
           <%= yield %>
         </div>
@@ -97,3 +95,8 @@ class: 'btn btn-xs btn-danger', title: 'Logout', :method => :delete) %></li>
 
   </body>
 </html>
+
+
+<script> 
+  console.log("russia");
+</script>
